@@ -1,7 +1,12 @@
-import _ from 'lodash';
-
 export default function useShuffledArray(arr, n) {
-  let newArr = _.shuffle(arr.filter((_, i) => i !== n));
+  const shuffledArr = [...arr];
+  for (let i = shuffledArr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
 
-  return newArr;
+    [shuffledArr[i], shuffledArr[j]] = [shuffledArr[j], shuffledArr[i]];
+  }
+
+  shuffledArr.splice(n, 1);
+
+  return shuffledArr;
 }
