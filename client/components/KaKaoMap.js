@@ -70,19 +70,27 @@ const KaKaoMap = ({ shopName }) => {
         });
         marker.setMap(map);
 
+        var abbreviatedShopName =
+          shopName?.length > 5 ? shopName?.substring(0, 5) + "..." : shopName;
+
+        var shopPadding = shopName?.length < 5 ? "28px" : "16px";
+
         var iwContent =
-          "<div>" +
-          "<span style='padding-left: 8px'>가게명</span>: " +
+          "<div style='text-align: center;'>" +
+          "<span style='margin-left: " +
+          shopPadding +
+          ";'>가게명 : " +
           "<b>" +
-          shopName +
+          abbreviatedShopName +
           "</b>" +
-          '<a href="https://map.kakao.com/link/to/' +
+          "</span>" +
+          '<br><a href="https://map.kakao.com/link/to/' +
           shopName +
           "," +
           mapXY.x +
           "," +
           mapXY.y +
-          '" target="_blank" style="color: blue; margin-left: 8px">길찾기</a></div>';
+          '" target="_blank" style="color: blue;">길찾기</a></div>';
 
         var iwPosition = new window.kakao.maps.LatLng(mapXY.x, mapXY.y);
 
