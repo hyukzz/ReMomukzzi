@@ -230,7 +230,7 @@ const Home = () => {
                     paddingTop: "30px",
                   }}
                 >
-                  <KaKaoMap />
+                  <KaKaoMap shopName={randomShopInfo?.shopInfo?.place_name} />
                 </Col>
               </Row>
             </Col>
