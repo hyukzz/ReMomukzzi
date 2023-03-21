@@ -36,7 +36,12 @@ const MapDiv = styled.div`
   }
 `;
 
-const KaKaoMap = () => {
+const Direction = styled.div`
+  padding: 5px;
+  background-color: #0f171e;
+`;
+
+const KaKaoMap = ({ shopName }) => {
   const mapXY = useSelector((state) => state.mapXY);
 
   useEffect(() => {
@@ -64,6 +69,29 @@ const KaKaoMap = () => {
           position: locPosition,
         });
         marker.setMap(map);
+
+        var iwPosition = new window.kakao.maps.LatLng(mapXY.x, mapXY.y);
+
+        var iwContent =
+          "<div>" +
+          "<span style='padding-left: 8px'>가게명</span>: " +
+          "<b>" +
+          shopName +
+          "</b>" +
+          '<a href="https://map.kakao.com/link/to/' +
+          shopName +
+          "," +
+          mapXY.x +
+          "," +
+          mapXY.y +
+          '" target="_blank" style="color: blue; margin-left: 8px">길찾기</a></div>';
+
+        var infowindow = new kakao.maps.InfoWindow({
+          position: iwPosition,
+          content: iwContent,
+        });
+
+        infowindow.open(map, marker);
       });
     };
 
