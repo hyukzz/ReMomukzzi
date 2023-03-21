@@ -70,8 +70,6 @@ const KaKaoMap = ({ shopName }) => {
         });
         marker.setMap(map);
 
-        var iwPosition = new window.kakao.maps.LatLng(mapXY.x, mapXY.y);
-
         var iwContent =
           "<div>" +
           "<span style='padding-left: 8px'>가게명</span>: " +
@@ -85,6 +83,8 @@ const KaKaoMap = ({ shopName }) => {
           "," +
           mapXY.y +
           '" target="_blank" style="color: blue; margin-left: 8px">길찾기</a></div>';
+
+        var iwPosition = new window.kakao.maps.LatLng(mapXY.x, mapXY.y);
 
         var infowindow = new kakao.maps.InfoWindow({
           position: iwPosition,
