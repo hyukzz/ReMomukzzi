@@ -1,6 +1,6 @@
-import Link from "next/link";
-import styled from "styled-components";
-import { Col, Row } from "antd";
+import Link from 'next/link';
+import styled from 'styled-components';
+import { Col, Row } from 'antd';
 
 const IntroImage = styled.img`
   width: 250px;
@@ -42,10 +42,10 @@ const IntroImageSet = ({ imageInfo }) => {
       <Row>
         {introPlaceInfo.map((shopInfo, i) => {
           return (
-            <Col span={12} key={i} style={{ textAlign: "center" }}>
+            <Col span={12} key={i} style={{ textAlign: 'center' }}>
               <PlaceName>{shopInfo?.shopInfo?.place_name}</PlaceName>
               <Link
-                href="/shopdetail/[id]"
+                href='/shopdetail/[id]'
                 as={`/shopdetail/${shopInfo.shopInfo.id}`}
               >
                 <IntroImage src={shopInfo?.shopPics[0]} />
