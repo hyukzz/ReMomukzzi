@@ -1,15 +1,16 @@
-import Header from "../components/Header";
-import IntroImageSet from "../components/IntroImageSet";
-import MoreviewLoader from "../components/MoreviewLoader";
-import ShopInfo from "../components/ShopInfo";
-import FavoriteModal from "../components/FavoriteModal";
-import KaKaoMap from "../components/KaKaoMap";
-import ImageCarousel from "../components/ImageCarousel";
-import Footer from "../components/Footer";
+import Header from '../components/Header';
+import IntroImageSet from '../components/IntroImageSet';
+import MoreviewLoader from '../components/MoreviewLoader';
+import ShopInfo from '../components/ShopInfo';
+import FavoriteModal from '../components/FavoriteModal';
+import KaKaoMap from '../components/KaKaoMap';
+import ImageCarousel from '../components/ImageCarousel';
+import Footer from '../components/Footer';
+import dynamic from 'next/dynamic';
 
-import { useEffect } from "react";
-import axios from "axios";
-import { Col, Row } from "antd";
+import { useEffect } from 'react';
+import axios from 'axios';
+import { Col, Row } from 'antd';
 import {
   firstGetAction,
   getShopInfo,
@@ -17,11 +18,11 @@ import {
   setMapXY,
   setRandomInt,
   setShuffleArr,
-} from "../reducers";
-import styled from "styled-components";
-import { useDispatch, useSelector } from "react-redux";
-import useShuffledArray from "../hooks/useShuffledArray";
-import useRandomInt from "../hooks/useRandomInt";
+} from '../reducers';
+import styled from 'styled-components';
+import { useDispatch, useSelector } from 'react-redux';
+import useShuffledArray from '../hooks/useShuffledArray';
+import useRandomInt from '../hooks/useRandomInt';
 
 const Title = styled.div`
   display: flex;
@@ -90,15 +91,19 @@ const Invisible = styled.div`
   }
 `;
 
+const DynamicIntroImageSet = dynamic(() =>
+  import('../components/IntroImageSet.js')
+);
+
 const Home = () => {
   const dispatch = useDispatch();
 
-  const isLoading = useSelector((state) => state.isLoading);
-  const isFavoriteOn = useSelector((state) => state.isFavoriteOn);
-  const shopInfo = useSelector((state) => state.shopInfo);
-  const isFirstGet = useSelector((state) => state.isFirstGet);
-  const randomInt = useSelector((state) => state.randomInt);
-  const shuffleArr = useSelector((state) => state.shuffleArr);
+  const isLoading = useSelector(state => state.isLoading);
+  const isFavoriteOn = useSelector(state => state.isFavoriteOn);
+  const shopInfo = useSelector(state => state.shopInfo);
+  const isFirstGet = useSelector(state => state.isFirstGet);
+  const randomInt = useSelector(state => state.randomInt);
+  const shuffleArr = useSelector(state => state.shuffleArr);
 
   function useHandleChange() {
     let n = useRandomInt(0, shopInfo.length);
@@ -125,7 +130,7 @@ const Home = () => {
           });
 
           const kakaoShopInfo = Array.from({ length: 4 }, (_, i) => i + 1).map(
-            (page) =>
+            page =>
               axios.get(
                 `https://dapi.kakao.com/v2/local/search/category.json?category_group_code=FD6&page=${page}&size=15&sort=accuracy&x=${position.coords.longitude}&y=${position.coords.latitude}&radius=1000`,
                 {
@@ -151,14 +156,14 @@ const Home = () => {
                 withCredentials: true,
               }
             )
-            .then((res) => {
+            .then(res => {
               const n = useRandomInt(0, res.data.length);
               dispatch(getShopInfo(res?.data));
               dispatch(setRandomInt(n));
               dispatch(
                 setMapXY({
-                  x: res.data[n]?.shopInfo?.y ?? "x좌표",
-                  y: res.data[n]?.shopInfo?.x ?? "y좌표",
+                  x: res.data[n]?.shopInfo?.y ?? 'x좌표',
+                  y: res.data[n]?.shopInfo?.x ?? 'y좌표',
                 })
               );
               dispatch(setShuffleArr(useShuffledArray(res.data, n)));
@@ -166,11 +171,11 @@ const Home = () => {
               dispatch(firstGetAction());
             });
         } else {
-          alert("GPS를 지원하지 않습니다");
+          alert('GPS를 지원하지 않습니다');
         }
       } catch (error) {
         console.error(error);
-        alert("위치 정보를 가져오는데 실패했습니다. 새로고침 해주세요.");
+        alert('위치 정보를 가져오는데 실패했습니다. 새로고침 해주세요.');
       }
     }
 
@@ -185,8 +190,8 @@ const Home = () => {
       );
     }
 
-    if (localStorage.getItem("visited") === null) {
-      localStorage.setItem("visited", JSON.stringify([]));
+    if (localStorage.getItem('visited') === null) {
+      localStorage.setItem('visited', JSON.stringify([]));
     }
   }, []);
 
@@ -217,7 +222,7 @@ const Home = () => {
                   xs={24}
                   md={12}
                   style={{
-                    paddingTop: "30px",
+                    paddingTop: '30px',
                   }}
                 >
                   <ShopInfo shopInfo={randomShopInfo} />
@@ -227,7 +232,7 @@ const Home = () => {
                   md={10}
                   offset={1}
                   style={{
-                    paddingTop: "30px",
+                    paddingTop: '30px',
                   }}
                 >
                   <KaKaoMap shopName={randomShopInfo?.shopInfo?.place_name} />
@@ -236,7 +241,7 @@ const Home = () => {
             </Col>
             <Col lg={24} xl={8}>
               <Invisible>
-                <IntroImageSet imageInfo={shuffleArr} />
+                <DynamicIntroImageSet imageInfo={shuffleArr} />
               </Invisible>
             </Col>
           </Row>
