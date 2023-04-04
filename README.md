@@ -60,6 +60,21 @@ https://momukzzi.shop/ (현재 비용문제 때문에 잠정 중단)
 
 </details>
 
+<details>
+<summary> 음식점 상세페이지 </summary>
+
+![Uploading 상세페이지(리).gif…]()
+
+</details>
+
+<details>
+<summary> 리뷰 작성 페이지 </summary>
+
+![createreview](https://user-images.githubusercontent.com/30408952/162654284-001e47dd-e0cb-47bf-8f94-89c23131a71e.gif)
+
+
+</details>
+
 <a href="https://younhyuk.notion.site/db5720ded66d4fa58a30b899cb8df8c7" target="_blank" >project 포트폴리오</a>
 
 ## Stack
