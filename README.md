@@ -54,7 +54,7 @@ https://momukzzi.shop/ (현재 비용문제 때문에 잠정 중단)
 </details>
 
 <details>
-<summary>g회원탈퇴</summary>
+<summary>회원탈퇴</summary>
 
 ![회원탈퇴view](https://user-images.githubusercontent.com/81045794/229711614-b28cb891-8cfd-46fe-b42d-154602bf0bd1.gif)
 
