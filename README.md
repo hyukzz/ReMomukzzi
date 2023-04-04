@@ -1,5 +1,6 @@
 ![깃허브 리드미](https://user-images.githubusercontent.com/81045794/222084376-51d09556-280c-4ef3-810d-cea87e581b58.gif)
 
+
 # 고민 조차 귀찮은 현대인을 위한 메뉴 추천 어플
 
 "Momukzzi"는 "오늘 뭐먹지?"라는 현대인의 영원한 난제를 해결하고자 기획한 서비스 입니다.
@@ -11,8 +12,55 @@
 https://momukzzi.shop/ (현재 비용문제 때문에 잠정 중단)
 
 ## 프로젝트 설명 및 시연
+<details>
+<summary>메인 페이지</summary>
 
-<a href="https://younhyuk.notion.site/db5720ded66d4fa58a30b899cb8df8c7" target="_blank" >project 설명 및 시연</a>
+![홈view](https://user-images.githubusercontent.com/81045794/229709824-59c967db-cb4c-4eaf-93a6-678381ddddab.gif)
+
+</details>
+
+<details>
+<summary>반응형 view</summary>
+
+![반응형 view](https://user-images.githubusercontent.com/81045794/229708863-d5a31918-60b3-42b6-8514-97a3ebdba30e.gif)
+
+</details>
+
+<details>
+<summary>회원가입</summary>
+
+![회원가입view](https://user-images.githubusercontent.com/81045794/229710467-617e872b-0cc8-4e38-acb4-cb90b994a6c3.gif)
+
+</details>
+
+<details>
+<summary>로그인</summary>
+
+![로그인view](https://user-images.githubusercontent.com/81045794/229710306-2d85aa7f-9f7c-4afc-b440-b45b33c9f836.gif)
+
+</details>
+
+<details>
+<summary>마이페이지</summary>
+<div>
+
+![My닉네임수정view](https://user-images.githubusercontent.com/81045794/229711158-527a521a-0d5f-42f3-8242-25f5f65952f5.gif)
+
+![My비밀번호수정view](https://user-images.githubusercontent.com/81045794/229711176-e0b01dd4-a5f6-4d8b-8fa2-98aacb8b474d.gif)
+
+![My리뷰수정view](https://user-images.githubusercontent.com/81045794/229711221-66694d75-c3e4-42f7-b0e8-ec43b78af0a7.gif)
+
+</div>
+</details>
+
+<details>
+<summary>g회원탈퇴</summary>
+
+![회원탈퇴view](https://user-images.githubusercontent.com/81045794/229711614-b28cb891-8cfd-46fe-b42d-154602bf0bd1.gif)
+
+</details>
+
+<a href="https://younhyuk.notion.site/db5720ded66d4fa58a30b899cb8df8c7" target="_blank" >project 포트폴리오</a>
 
 ## Stack
 ![프로젝트 '뭐먹지' 아키텍쳐 (8)](https://user-images.githubusercontent.com/81045794/162653808-5a68a78b-4d16-4ddf-9299-22a310589da9.png)
