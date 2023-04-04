@@ -63,7 +63,7 @@ https://momukzzi.shop/ (현재 비용문제 때문에 잠정 중단)
 <details>
 <summary> 음식점 상세페이지 </summary>
 
-![Uploading 상세페이지(리).gif…]()
+![음식점 상세](https://user-images.githubusercontent.com/81045794/229782151-a367d830-9fb9-469c-9b9f-0a2df577ae9b.gif)
 
 </details>
 
@@ -75,7 +75,7 @@ https://momukzzi.shop/ (현재 비용문제 때문에 잠정 중단)
 
 </details>
 
-<a href="https://younhyuk.notion.site/db5720ded66d4fa58a30b899cb8df8c7" target="_blank" >project 포트폴리오</a>
+<h3><a href="https://younhyuk.notion.site/db5720ded66d4fa58a30b899cb8df8c7" target="_blank" >project 포트폴리오</a></h3>
 
 ## Stack
 ![프로젝트 '뭐먹지' 아키텍쳐 (8)](https://user-images.githubusercontent.com/81045794/162653808-5a68a78b-4d16-4ddf-9299-22a310589da9.png)
